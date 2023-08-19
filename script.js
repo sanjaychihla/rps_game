@@ -6,7 +6,12 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-const pSelection = prompt("Enter Your Selection");
+let pSelection;
+function promptSelection() {
+    pSelection = prompt("Enter Your Selection");
+    return pSelection;
+}
+promptSelection();
 const playerSelection = pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase();
 
 const computerSelection = getComputerChoice();
@@ -14,21 +19,21 @@ const computerSelection = getComputerChoice();
 function playRound(playerSelection, computerSelection) {
 
     if(computerSelection === "Rock") {
-        if(playerSelection === "Scissor") console.log("Lose!");
-        else if(playerSelection === "Paper") console.log("Win!");
-        else console.log("Draw!");
+        if(playerSelection === "Scissor") console.log("You Lose!");
+        else if(playerSelection === "Paper") console.log("You Win!");
+        else console.log("It's a Draw!");
     }
 
     else if(computerSelection === "Paper") {
-        if(playerSelection === "Rock") console.log("Lose!");
-        else if(playerSelection === "Scissor") console.log("Win!");
-        else console.log("Draw!");
+        if(playerSelection === "Rock") console.log("You Lose!");
+        else if(playerSelection === "Scissor") console.log("You Win!");
+        else console.log("It's a Draw!");
     }
 
     else if(computerSelection === "Scissor") {
-        if(playerSelection === "Paper") console.log("Lose!");
-        else if(playerSelection === "Rock") console.log("Win!");
-        else console.log("Draw!");
+        if(playerSelection === "Paper") console.log("You Lose!");
+        else if(playerSelection === "Rock") console.log("You Win!");
+        else console.log("It's a Draw!");
     }
 
 }
