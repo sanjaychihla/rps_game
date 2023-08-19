@@ -6,3 +6,5 @@ function getComputerChoice() {
 
 const pSelection = prompt("Enter Your Selection");
 const playerSelection = playerSelectionSpellCheck.charAt(0).toUpperCase() + playerSelectionSpellCheck.slice(1).toLowerCase();
+
+const computerSelection = getComputerChoice();
