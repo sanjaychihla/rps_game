@@ -19,16 +19,31 @@ function promptSelection() {
         promptSelection();
     }*/
 
-    // Check if corrected string is strictly equals to main strings or not, if yes then return that corrected string.
-    if(pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Rock" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Paper" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Scissor") {
-        console.log("Player Input:- "+pSelection+" -----> Auto corrected to:- "+pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase());
-        pSelection = pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase();
-        return pSelection;
+    // Check if string entered is not null then enter if ->
+    if(pSelection != null) {
+
+        if(pSelection === "") {
+            alert(" Input cannot be empty. Player must enter a choice. \n Press OK to continue... ");
+            promptSelection();
+        }
+
+        //Correct the string and check if corrected string is strictly equals to required strings or not, if yes then return that corrected string.
+        else if(pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Rock" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Paper" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Scissor") {
+            console.log("Player Input:- "+pSelection+" -----> Auto corrected to:- "+pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase());
+            pSelection = pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase();
+            return pSelection;
+        }
+
+        // Else ask for correct input.
+        else {
+            console.log("Wrong Input:- "+pSelection);
+            promptSelection();
+        }
     }
 
-    // Else ask for correct input.
+    // Player can't leave without playing... :D
     else {
-        console.log("Wrong Input:- "+pSelection);
+        alert(" Player cannot leave now and must enter a choice. \n Press OK to continue... ");
         promptSelection();
     }
 }
