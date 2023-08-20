@@ -8,11 +8,30 @@ function getComputerChoice() {
 
 let pSelection;
 function promptSelection() {
-    pSelection = prompt("Enter Your Selection");
-    return pSelection;
+    pSelection = prompt("Please enter:- Rock Or Paper Or Scissor");
+
+    //Check if string is null or contains numbers in it.
+    /*if(pSelection === null || /[0-9]/.test(pSelection)) {
+        console.log("Wrong Input:- "+pSelection);
+        promptSelection();
+    }*/
+
+    //
+    if(pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Rock" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Paper" || pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase() === "Scissor") {
+        console.log("Player Input:- "+pSelection+" -----> Auto corrected to:- "+pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase());
+        pSelection = pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase();
+        return pSelection;
+    }
+
+    else {
+        console.log("Wrong Input:- "+pSelection);
+        promptSelection();
+    }
 }
+
 promptSelection();
-const playerSelection = pSelection.charAt(0).toUpperCase() + pSelection.slice(1).toLowerCase();
+
+const playerSelection = pSelection;
 
 const computerSelection = getComputerChoice();
 
